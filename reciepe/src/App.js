@@ -39,18 +39,20 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
+        <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit">search</button>
       </form>
-      {recipes.map((recipee, id) => (
-        <Recipe
-          key={id}
-          title={recipee.recipe.label}
-          calories={recipee.recipe.calories}
-          image={recipee.recipe.image}
-          ingredients={recipee.recipe.ingredients}
-        />
-      ))}
+      <div className='recipes'>
+        {recipes.map((recipee, id) => (
+          <Recipe
+            key={id}
+            title={recipee.recipe.label}
+            calories={recipee.recipe.calories}
+            image={recipee.recipe.image}
+            ingredients={recipee.recipe.ingredients}
+          />
+        ))}
+      </div>
     </div>
   );
 }
