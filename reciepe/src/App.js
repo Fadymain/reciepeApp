@@ -10,7 +10,7 @@ function App() {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("banana");
 
 
 
@@ -22,6 +22,7 @@ function App() {
     const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
     setRecipes(data.hits);
+    console.log("data", data.hits);
   }
 
   const updateSearch = e => {
